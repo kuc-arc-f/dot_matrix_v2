@@ -14,7 +14,7 @@ class mqttPubClass:
     def send_pubw(self, sPay ,sTopic):
 		clsConst  = com_appConst.appConstClass()
 		iWait=0
-		iAdd=5
+		iAdd=7
 		if (len(sPay) < 1):
 			return
 		if( len(sPay) > 20 ):
@@ -46,6 +46,7 @@ class mqttPubClass:
 		sTemp="てんき：ふくおか"
 		sTemp=clsSend.convert_zenkau( sTemp )
 		#city
+#		self.send_pubw(dic["city"] ,sTopic)
 		self.send_pubw(sTemp ,sTopic)
 		#cond
 		sTemp=clsSend.convert_zenkau(dic["cond"])
@@ -54,6 +55,7 @@ class mqttPubClass:
 		print("temp_H=")
 		print(str(dic["temp_H"]))
 #		sTemp="High Temp:" + str(dic["temp_H"]) + "(C)"
+#		sTemp="さいこうきおん:" + str(dic["temp_H"]) + "(C)"
 		sTemp= "さいこうきおん:"
 		sTemp=clsSend.convert_zenkau( sTemp )
 		self.send_pubw(sTemp ,sTopic)
@@ -61,6 +63,7 @@ class mqttPubClass:
 		sTemp=clsSend.convert_zenkau( sTemp )
 		self.send_pubw(sTemp ,sTopic)
 		#temp-L
+#		sTemp="さいていきおん:" + str(dic["temp_L"]) + "(C)"
 		sTemp="さいていきおん:"
 		sTemp=clsSend.convert_zenkau( sTemp )
 		self.send_pubw(sTemp ,sTopic)
