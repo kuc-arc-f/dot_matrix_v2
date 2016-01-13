@@ -5,6 +5,8 @@ import com_weather
 import time
 import com_sendString
 
+mMaxOne =10
+
 #com_mqttPub
 class mqttPubClass:
 
@@ -17,8 +19,10 @@ class mqttPubClass:
 		iAdd=7
 		if (len(sPay) < 1):
 			return
-		if( len(sPay) > 20 ):
-			sPay=sPay[0:20]
+#		if( len(sPay) > 20 ):
+#			sPay=sPay[0:20]
+		if( len(sPay) > mMaxOne ):
+			sPay=sPay[0:mMaxOne]
 		if( len(sPay) > 10 ):
 			iAdd=(len(sPay) * 1000) * 0.5
 			iAdd=iAdd / 1000
